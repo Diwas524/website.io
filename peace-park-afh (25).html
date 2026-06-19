@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peace Park Adult Family Home | Bonney Lake, WA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1E3A2F;
+  --forest-mid:#2C5440;
+  --moss:#4A7C59;
+  --mint:#C8E6C9;
+  --mint-pale:#EDF7EE;
+  --gold:#D4A853;
+  --gold-pale:#FBF4E6;
+  --blush:#F2ECE4;
+  --ink:#111B14;
+  --body:#374840;
+  --sub:#5E7368;
+  --border:#D6E4D9;
+  --white:#FFFFFF;
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'Inter',system-ui,sans-serif;
+  --r:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--white);color:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── FLOATING NAV ── */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:300;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.8);border-radius:100px;padding:0 10px 0 20px;display:flex;align-items:center;gap:8px;height:58px;box-shadow:0 8px 32px rgba(30,58,47,.12);width:calc(100% - 48px);max-width:960px;transition:all .3s}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto}
+.nl-icon{width:32px;height:32px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.nl-name{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--forest);white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:500;color:var(--body);padding:7px 14px;border-radius:100px;transition:background .2s,color .2s}
+.nav-links a:hover{background:var(--mint-pale);color:var(--forest)}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:9px 20px!important;border-radius:100px!important;font-weight:600!important;font-size:.82rem!important;white-space:nowrap;transition:background .2s!important}
+.nav-cta:hover{background:var(--forest-mid)!important}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:var(--forest);border:none;padding:10px 12px;border-radius:100px;margin-left:4px}
+.hamburger span{display:block;width:18px;height:1.5px;background:#fff;border-radius:2px}
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(17,27,20,.55);z-index:280;backdrop-filter:blur(4px)}
+.mob-overlay.open{display:block}
+.mob-drawer{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:var(--white);z-index:290;padding:80px 32px 40px;display:flex;flex-direction:column;gap:4px;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.12)}
+.mob-drawer.open{right:0}
+.mob-drawer a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--body);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s}
+.mob-drawer a:hover{color:var(--forest)}
+.mob-cta{margin-top:24px;background:var(--forest);color:var(--white)!important;text-align:center;border-radius:10px;padding:16px!important;border:none!important;font-weight:700!important;font-size:1rem!important}
+.mob-ph{color:var(--gold)!important;border:none!important;font-weight:600!important;font-size:1.1rem!important}
+.mob-close{position:absolute;top:20px;right:20px;background:none;border:1.5px solid var(--border);border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1.1rem;color:var(--body);display:flex;align-items:center;justify-content:center}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{background:var(--forest);display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px 72px;position:relative;z-index:1}
+.hero-left::after{content:'';position:absolute;top:0;right:-1px;bottom:0;width:80px;background:var(--forest);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);z-index:2}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--forest) 0%,transparent 30%)}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:28px}
+.hero h1{font-family:var(--fd);font-size:clamp(2.8rem,4.5vw,4.2rem);font-weight:700;color:#fff;line-height:1.06;margin-bottom:22px}
+.hero h1 span{font-style:italic;color:var(--mint)}
+.hero-p{font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.8;max-width:420px;margin-bottom:44px;font-weight:300}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--ink);padding:15px 30px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;letter-spacing:.02em}
+.btn-gold:hover{background:#C49640;transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,83,.4)}
+.btn-wh{background:transparent;color:#fff;padding:14px 30px;border-radius:10px;border:1.5px solid rgba(255,255,255,.4);font-weight:500;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-wh:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-trust{display:flex;align-items:center;gap:16px;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.12)}
+.trust-item{text-align:center}
+.trust-n{font-family:var(--fd);font-size:1.9rem;font-weight:700;color:var(--mint);line-height:1}
+.trust-l{font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px}
+.trust-div{width:1px;height:36px;background:rgba(255,255,255,.15)}
+
+/* ── PROMISE STRIP ── */
+.promise{background:var(--gold-pale);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:40px 24px}
+.promise-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.promise-item .pi{font-size:26px;margin-bottom:10px}
+.promise-item strong{display:block;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.promise-item p{font-size:.8rem;color:var(--sub);line-height:1.55}
+
+/* ── SECTION BASE ── */
+.sec{padding:96px 24px}
+.wrap{max-width:1040px;margin:0 auto}
+.ew{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:10px}
+.ew-wh{color:var(--mint)}
+.h2{font-family:var(--fd);font-size:clamp(2rem,4vw,2.9rem);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:18px}
+.h2-wh{color:#fff}
+.h2 i{font-style:italic;color:var(--moss)}
+.lead{font-size:1rem;color:var(--sub);line-height:1.82;max-width:560px}
+.lead-wh{color:rgba(255,255,255,.72)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+.photo-stack{position:relative}
+.photo-stack .pm-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(30,58,47,.18)}
+.photo-stack .pm{width:100%;height:460px;object-fit:cover;display:block}
+.badge{position:absolute;top:20px;left:20px;display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;padding:12px 18px;border-radius:12px;font-size:.82rem;font-weight:600;box-shadow:0 10px 28px rgba(0,0,0,.22);z-index:2}
+.badge-dot{width:8px;height:8px;background:var(--mint);border-radius:50%;flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+.journey-card{display:flex;align-items:center;gap:16px;background:var(--forest);border-radius:16px;padding:16px;margin-top:-44px;margin-left:24px;margin-right:24px;position:relative;z-index:3;text-decoration:none;transition:background .2s,transform .2s;box-shadow:0 16px 36px rgba(17,27,20,.28)}
+.journey-card:hover{background:var(--forest-mid);transform:translateY(-3px)}
+.journey-card .jc-photo{width:64px;height:64px;border-radius:12px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.25)}
+.journey-card .jc-text{flex:1;min-width:0}
+.journey-card .jc-text strong{display:block;font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#fff}
+.journey-card .jc-text span{font-size:.78rem;color:rgba(255,255,255,.65)}
+.journey-card .jc-arrow{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .2s}
+.journey-card:hover .jc-arrow{transform:translateX(4px)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.value-list{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.vl-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--border)}
+.vl-item:last-child{border-bottom:none}
+.vl-num{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--mint-pale);line-height:1;min-width:32px;border:2px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;height:32px;font-size:1rem;color:var(--moss)}
+.vl-body strong{display:block;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.vl-body p{font-size:.85rem;color:var(--sub);line-height:1.65}
+
+/* ── SERVICES ── */
+.services-bg{background:var(--forest);position:relative;overflow:hidden}
+.services-bg::before{content:'';position:absolute;top:-180px;right:-180px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,.12) 0%,transparent 70%);pointer-events:none}
+.services-bg::after{content:'';position:absolute;bottom:-160px;left:-160px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,230,201,.08) 0%,transparent 70%);pointer-events:none}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;position:relative}
+.svc{background:var(--mint-pale);padding:36px 28px 32px;border-radius:18px;position:relative;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s;overflow:hidden}
+.svc:nth-child(3n+2){background:var(--white)}
+.svc:nth-child(3n+3){background:var(--gold-pale)}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--moss));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.svc:hover{transform:translateY(-7px);box-shadow:0 24px 48px rgba(0,0,0,.32)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-num{font-family:var(--fd);font-style:italic;font-size:.85rem;font-weight:700;color:var(--moss);opacity:.55;letter-spacing:.06em;margin-bottom:18px}
+.svc-icon{width:54px;height:54px;background:var(--forest);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 10px 22px rgba(30,58,47,.28);transition:transform .3s;font-size:24px;line-height:1}
+.svc:hover .svc-icon{transform:scale(1.08) rotate(-4deg)}
+.svc h3{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.svc p{font-size:.85rem;color:var(--sub);line-height:1.75}
+
+/* ── GALLERY ── */
+.gal-bg{background:var(--blush)}
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.gtab{background:#fff;border:1.5px solid var(--border);border-radius:100px;padding:8px 20px;font-family:var(--fb);font-size:.8rem;font-weight:600;color:var(--sub);cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.gtab:hover,.gtab.active{background:var(--forest);border-color:var(--forest);color:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:220px 220px;gap:12px}
+.gi{border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:#ddd}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.gi:hover img{transform:scale(1.07)}
+.gi .gl{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,27,20,.8) 0%,transparent 60%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.gi:hover .gl{opacity:1}
+.gl-title{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:3px}
+.gl-sub{font-size:.72rem;color:rgba(255,255,255,.65)}
+/* grid placement */
+.gi:nth-child(1){grid-column:span 5;grid-row:span 2}
+.gi:nth-child(2){grid-column:span 4}
+.gi:nth-child(3){grid-column:span 3}
+.gi:nth-child(4){grid-column:span 3}
+.gi:nth-child(5){grid-column:span 4}
+.gi:nth-child(6){grid-column:span 5}
+.gi:nth-child(7){display:none}
+.gi:nth-child(8){display:none}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb-box{position:relative;max-width:90vw;text-align:center}
+.lb-box img{max-height:82vh;max-width:90vw;border-radius:12px;object-fit:contain;display:block}
+.lb-cap{color:rgba(255,255,255,.75);font-size:.875rem;margin-top:12px}
+.lb-x{position:absolute;top:-44px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.1rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-x:hover{background:rgba(255,255,255,.25)}
+
+/* ── TESTIMONIALS ── */
+.testi-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;margin-top:52px;border-radius:24px;overflow:hidden;box-shadow:0 24px 64px rgba(30,58,47,.14)}
+.testi-img{position:relative;min-height:560px}
+.testi-img img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.testi-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(17,27,20,.55) 0%,transparent 45%)}
+.testi-img-cap{position:absolute;left:28px;bottom:24px;z-index:1;color:#fff}
+.testi-img-cap strong{font-family:var(--fd);font-size:1.3rem;display:block}
+.testi-img-cap span{font-size:.78rem;color:rgba(255,255,255,.75)}
+.testi-panel{background:var(--white);padding:48px 48px;display:flex;flex-direction:column}
+.testi-slider{position:relative;flex:1;min-height:280px}
+.tc{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateX(16px);transition:opacity .45s ease,transform .45s ease;display:flex;flex-direction:column;justify-content:center}
+.tc.active{opacity:1;visibility:visible;transform:translateX(0);position:relative}
+.tc::before{content:'\201C';font-family:var(--fd);font-size:4.5rem;color:var(--mint);line-height:1;opacity:.8;margin-bottom:4px}
+.stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:14px}
+.tc blockquote{font-size:1.12rem;color:var(--body);line-height:1.78;margin-bottom:24px;font-style:italic;font-family:var(--fd)}
+.tc-author{display:flex;align-items:center;gap:12px}
+.tc-av{width:44px;height:44px;border-radius:50%;background:var(--mint-pale);border:2px solid var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.tc-name{font-size:.85rem;font-weight:700;color:var(--ink)}
+.tc-role{font-size:.76rem;color:var(--sub)}
+.testi-nav{display:flex;align-items:center;gap:18px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+.testi-dots{display:flex;gap:8px;margin-right:auto}
+.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.testi-dot.active{background:var(--moss);transform:scale(1.3)}
+.testi-arrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:#fff;color:var(--forest);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:1rem}
+.testi-arrow:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+@media(max-width:860px){.testi-split{grid-template-columns:1fr}.testi-img{min-height:260px}.testi-panel{padding:36px 28px}}
+
+/* ── PROCESS ── */
+.process-bg{background:var(--mint-pale)}
+.process-row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+.ps-card{background:#fff;border-radius:20px;padding:40px 32px;text-align:center;border:1px solid var(--border);transition:box-shadow .25s}
+.ps-card:hover{box-shadow:0 12px 40px rgba(30,58,47,.1)}
+.ps-n{width:60px;height:60px;background:var(--forest);color:#fff;border-radius:16px;font-family:var(--fd);font-size:1.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.ps-card h3{font-family:var(--fd);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.ps-card p{font-size:.875rem;color:var(--sub);line-height:1.75}
+.ps-link{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:.82rem;font-weight:700;color:var(--forest);text-decoration:none;letter-spacing:.03em}
+.ps-link:hover{color:var(--moss)}
+
+/* ── AMENITIES ── */
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.loc-card{border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:transform .3s,box-shadow .3s}
+.loc-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(30,58,47,.16)}
+.loc-img{position:relative;height:180px;overflow:hidden}
+.loc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.loc-card:hover .loc-img img{transform:scale(1.06)}
+.loc-tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--forest);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.loc-body{padding:22px 22px 24px}
+.loc-body h3{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.loc-body .loc-addr{font-size:.8rem;color:var(--sub);margin-bottom:14px;display:flex;gap:6px;align-items:flex-start;line-height:1.5}
+.loc-body .loc-phone{font-size:.82rem;font-weight:600;color:var(--moss);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.loc-body .loc-phone:hover{color:var(--forest)}
+.loc-card.loc-current{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
+.am{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--white);border-radius:12px;border:1.5px solid var(--border);font-size:.875rem;font-weight:600;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.am:hover{border-color:var(--moss);box-shadow:0 4px 16px rgba(74,124,89,.12)}
+.am-ic{font-size:22px;flex-shrink:0}
+
+/* ── CTA ── */
+.cta-sec{background:var(--forest);padding:88px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(200,230,201,.04);top:-200px;left:-150px;pointer-events:none}
+.cta-sec::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(200,230,201,.04);bottom:-150px;right:-100px;pointer-events:none}
+.cta-sec h2{font-family:var(--fd);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.15;position:relative;z-index:1}
+.cta-sec h2 i{font-style:italic;color:var(--mint)}
+.cta-sec p{color:rgba(255,255,255,.7);font-size:1.05rem;margin-bottom:42px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-gold-lg{background:var(--gold);color:var(--ink);padding:18px 38px;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.btn-gold-lg:hover{background:#C49640;transform:translateY(-2px);box-shadow:0 10px 32px rgba(212,168,83,.45)}
+.btn-wh-lg{background:transparent;color:#fff;padding:17px 38px;border-radius:12px;border:1.5px solid rgba(255,255,255,.4);font-weight:500;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.btn-wh-lg:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ── CONTACT ── */
+.contact-bg{background:var(--blush)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;margin-top:56px}
+.ci-head{font-size:1rem;color:var(--sub);line-height:1.82;margin-bottom:32px}
+.cd{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px}
+.cd-ic{width:44px;height:44px;background:var(--forest);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cd-t strong{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);margin-bottom:4px}
+.cd-t a,.cd-t span{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;line-height:1.5}
+.cd-t a:hover{color:var(--forest)}
+.form-card{background:#fff;border-radius:20px;padding:40px 36px;border:1px solid var(--border);box-shadow:0 8px 32px rgba(30,58,47,.08)}
+.form-card label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+.form-card input,.form-card textarea,.form-card select{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:var(--fb);font-size:.95rem;background:#fff;color:var(--ink);margin-bottom:18px;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.form-card input:focus,.form-card textarea:focus,.form-card select:focus{border-color:var(--forest);box-shadow:0 0 0 3px rgba(30,58,47,.08)}
+.form-card input.invalid,.form-card textarea.invalid,.form-card select.invalid{border-color:#e53935;box-shadow:0 0 0 3px rgba(229,57,53,.1)}
+.field-err{display:none;color:#e53935;font-size:.75rem;font-weight:600;margin-top:-14px;margin-bottom:12px}
+.field-err.show{display:block}
+.form-card textarea{height:108px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-card button{width:100%;padding:16px;background:var(--forest);color:#fff;border:none;border-radius:12px;font-family:var(--fb);font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.03em;margin-top:2px}
+.form-card button:hover{background:var(--forest-mid);transform:translateY(-1px)}
+.fs{display:none;background:var(--mint-pale);border:2px solid var(--moss);border-radius:12px;padding:24px;margin-top:14px;color:var(--forest);font-weight:600;text-align:center;font-size:.95rem}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,.45);padding:64px 24px 36px}
+.ft{max-width:1040px;margin:0 auto}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:56px;margin-bottom:52px}
+.ft-logo{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:14px}
+.ft-brand p{font-size:.875rem;line-height:1.8;max-width:260px}
+.ft-brand .lic{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:16px}
+.ft-col h4{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px}
+.ft-col a{display:block;color:rgba(255,255,255,.4);text-decoration:none;font-size:.875rem;margin-bottom:11px;transition:color .2s}
+.ft-col a:hover{color:var(--mint)}
+.ft-bar{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem}
+.ft-bar a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.ft-bar a:hover{color:rgba(255,255,255,.6)}
+.ft-motto{color:var(--mint);font-family:var(--fd);font-style:italic;font-size:.9rem}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(28px);transition:opacity .6s ease,transform .6s ease}
+.rv-r.in{opacity:1;transform:none}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  nav{top:10px;padding:0 8px 0 16px;height:54px;border-radius:14px;width:calc(100% - 24px)}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:120px 32px 60px}
+  .hero-left::after{display:none}
+  .hero-right{height:300px}
+  .hero-right::after{background:linear-gradient(to bottom,var(--forest) 0%,transparent 40%)}
+  .hero-trust{flex-wrap:wrap;gap:12px}
+  .promise-inner{grid-template-columns:1fr 1fr;gap:20px}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .photo-stack .pm{height:320px}
+  .journey-card{margin-top:-36px;margin-left:16px;margin-right:16px;padding:12px}
+  .journey-card .jc-photo{width:52px;height:52px}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:10px}
+  .gi{height:180px!important}
+  .gi:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .gi:nth-child(2),.gi:nth-child(3),.gi:nth-child(4),.gi:nth-child(5),.gi:nth-child(6){grid-column:span 1}
+  .testi-grid{grid-template-columns:1fr}
+  .process-row{grid-template-columns:1fr;gap:20px}
+  .loc-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .ft-top{grid-template-columns:1fr;gap:36px}
+  .ft-bar{justify-content:center;text-align:center}
+}
+@media(max-width:540px){
+  .hero-left{padding:100px 24px 52px}
+  .svc-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .gi:nth-child(1){grid-column:span 1}
+  .gi:nth-child(6){display:none}
+  .loc-grid{grid-template-columns:1fr}
+  .promise-inner{grid-template-columns:1fr 1fr}
+  .hero-btns,.cta-btns{flex-direction:column;align-items:flex-start}
+  .cta-sec .cta-btns{align-items:center}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+}
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--forest);padding:14px 24px}
+.trust-bar-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.tb-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;letter-spacing:.04em}
+.tb-item span{font-size:16px}
+.tb-div{width:1px;height:18px;background:rgba(255,255,255,.2)}
+
+/* ── STAFF ── */
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+.staff-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s;text-align:center}
+.staff-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(30,58,47,.14)}
+.staff-img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+.staff-body{padding:22px 20px 26px}
+.staff-name{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.staff-role{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--moss);margin-bottom:12px}
+.staff-bio{font-size:.83rem;color:var(--sub);line-height:1.72}
+.staff-badge{display:inline-flex;align-items:center;gap:6px;background:var(--mint-pale);color:var(--forest);font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:100px;margin-top:12px}
+
+/* ── COMPARISON ── */
+.compare-bg{background:var(--forest)}
+.compare-table{margin-top:52px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.compare-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;align-items:center}
+.compare-row.header{background:rgba(255,255,255,.06)}
+.compare-row:not(.header){border-top:1px solid rgba(255,255,255,.07)}
+.compare-row:not(.header):hover{background:rgba(255,255,255,.03)}
+.compare-cell{padding:16px 20px;font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.5}
+.compare-cell.label{font-weight:600;color:rgba(255,255,255,.9);font-size:.88rem}
+.compare-cell.col-head{font-family:var(--fd);font-size:1rem;font-weight:700;color:#fff;text-align:center}
+.compare-cell.col-head.highlight{color:var(--gold)}
+.compare-cell.center{text-align:center}
+.check{color:#6fcf97;font-size:1.1rem}
+.cross{color:rgba(255,255,255,.25);font-size:1.1rem}
+.compare-cell.highlight-col{background:rgba(212,168,83,.07)}
+
+/* ── FAQ ── */
+.faq-bg{background:var(--blush)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px}
+.faq-item{background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--moss)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px;cursor:pointer;font-weight:600;font-size:.92rem;color:var(--ink);user-select:none}
+.faq-q .faq-icon{width:28px;height:28px;border-radius:50%;background:var(--mint-pale);color:var(--forest);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .3s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--forest);color:#fff}
+.faq-a{display:none;padding:0 22px 20px;font-size:.875rem;color:var(--sub);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+@media(max-width:860px){
+  .staff-grid{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1.2fr 1fr 1fr 1fr}
+  .compare-cell{padding:12px 14px;font-size:.78rem}
+}
+@media(max-width:540px){
+  .staff-grid{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr 1fr}
+  .compare-cell.hide-mob{display:none}
+}
+
+/* ── FLOATING CTA ── */
+.float-cta{position:fixed;bottom:28px;right:28px;z-index:400;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.float-btn{display:flex;align-items:center;gap:10px;background:var(--forest);color:#fff;text-decoration:none;padding:14px 22px;border-radius:100px;font-weight:700;font-size:.88rem;box-shadow:0 8px 32px rgba(30,58,47,.35);transition:all .25s;white-space:nowrap}
+.float-btn:hover{background:var(--forest-mid);transform:translateY(-3px);box-shadow:0 14px 40px rgba(30,58,47,.45)}
+.float-btn .fb-icon{width:32px;height:32px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+@media(max-width:540px){.float-btn span{display:none}.float-btn{padding:14px}.float-btn .fb-icon{width:28px;height:28px}}
+</style>
+</head>
+<body>
+
+<!-- FLOATING SCHEDULE BUTTON -->
+<div class="float-cta">
+  <a href="tel:+12065550192" class="float-btn">
+    <div class="fb-icon">📞</div>
+    <span>Call Us Now</span>
+  </a>
+</div>
+
+<!-- FLOATING NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nl-icon">🕊️</div>
+    <span class="nl-name">Peace Park AFH</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#staff">Our Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="tel:+15648883396" style="color:var(--forest);font-weight:700">📞 (564) 888-3396</a></li>
+    <li><a href="#contact" class="nav-cta">Schedule Tour</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-overlay" id="ov" onclick="closeMob()"></div>
+<div class="mob-drawer" id="drawer">
+  <button class="mob-close" onclick="closeMob()">✕</button>
+  <a href="#about" onclick="closeMob()">About Us</a>
+  <a href="#services" onclick="closeMob()">Care Services</a>
+  <a href="#staff" onclick="closeMob()">Our Team</a>
+  <a href="#gallery" onclick="closeMob()">Photo Gallery</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#testimonials" onclick="closeMob()">Family Stories</a>
+  <a href="#amenities" onclick="closeMob()">Locations</a>
+  <a href="tel:+15648883396" class="mob-ph">📞 (564) 888-3396</a>
+  <a href="#contact" class="mob-cta" onclick="closeMob()">Schedule a Free Tour</a>
+</div>
+
+<!-- HERO — split layout -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌿 Licensed · Bonney Lake, WA · DSHS Certified</div>
+    <h1>A Home Where<br>Every Elder<br><span>Truly Belongs</span></h1>
+    <p class="hero-p">Six residents. Round-the-clock care. A real home — not a hallway. Peace Park is where families find peace, and seniors find joy again.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">📅 Schedule a Free Tour</a>
+      <a href="tel:+12065550192" class="btn-wh">📞 (206) 555-0192</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-n">6</div><div class="trust-l">Max Residents</div></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-n">24/7</div><div class="trust-l">Staffed Care</div></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-n">10+</div><div class="trust-l">Yrs Serving Families</div></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><div class="trust-n">100%</div><div class="trust-l">State Licensed</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=85" alt="Senior resident with caregiver in a warm home setting" loading="eager" />
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="tb-item"><span>✅</span> WA State Licensed · #WA-AFH-XXXXX</div>
+    <div class="tb-div"></div>
+    <div class="tb-item"><span>🏛️</span> DSHS Certified & Inspected</div>
+    <div class="tb-div"></div>
+    <div class="tb-item"><span>🩺</span> Licensed Caregivers On-Site 24/7</div>
+    <div class="tb-div"></div>
+    <div class="tb-item"><span>⭐</span> 10+ Years Serving Families</div>
+    <div class="tb-div"></div>
+    <div class="tb-item"><span>🏡</span> Only 6 Residents — Never Overcrowded</div>
+  </div>
+</div>
+
+<!-- PROMISE STRIP -->
+<div class="promise">
+  <div class="promise-inner">
+    <div class="promise-item rv"><div class="pi">🏡</div><strong>Home, Not a Facility</strong><p>Only 6 residents — real relationships, not rotations</p></div>
+    <div class="promise-item rv"><div class="pi">💛</div><strong>Family-First Culture</strong><p>You're kept informed, involved and at ease — always</p></div>
+    <div class="promise-item rv"><div class="pi">🌿</div><strong>Peaceful Setting</strong><p>Garden, sunlight, quiet — designed to restore calm</p></div>
+    <div class="promise-item rv"><div class="pi">🩺</div><strong>Expert Daily Care</strong><p>Licensed caregivers, personalized plans, 24/7 support</p></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="photo-stack rv-l">
+        <div class="pm-wrap">
+          <img class="pm" src="https://images.unsplash.com/photo-1574279606130-09958dc756f7?w=900&q=80" alt="Caregiver walking with senior resident in peaceful garden" loading="lazy" />
+          <div class="badge"><span class="badge-dot"></span> Currently accepting new residents</div>
+        </div>
+        <a class="journey-card" href="#about">
+          <img class="jc-photo" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80" alt="Peace Park caregiver" />
+          <div class="jc-text"><strong>Know Our Journey</strong><span>From one home to a family of care since 2014</span></div>
+          <span class="jc-arrow">→</span>
+        </a>
+      </div>
+      <div class="rv-r">
+        <p class="ew">Our Story</p>
+        <h2 class="h2">Allowing Families to Become <i>Family Again</i></h2>
+        <p class="lead">Founded on one belief: every senior deserves to feel genuinely at home. Peace Park is a real house in a quiet Bonney Lake neighborhood — warm, familiar, and full of life. Because care should never feel institutional.</p>
+        <div class="value-list">
+          <div class="vl-item">
+            <div class="vl-num">01</div>
+            <div class="vl-body"><strong>Known by Name, Not Room Number</strong><p>With only six residents, our caregivers know each person's stories, preferences, and moods. Deep bonds form — not just routines.</p></div>
+          </div>
+          <div class="vl-item">
+            <div class="vl-num">02</div>
+            <div class="vl-body"><strong>Families Stay Close & Informed</strong><p>We communicate proactively — daily updates, open visits, and care plan meetings so you're never left wondering.</p></div>
+          </div>
+          <div class="vl-item">
+            <div class="vl-num">03</div>
+            <div class="vl-body"><strong>A Calming, Beautiful Environment</strong><p>Garden walks, sunlit rooms, home-cooked aromas — sensory peace that institutions simply can't replicate.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — dark section -->
+<section class="sec services-bg" id="services">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:580px;margin:0 auto 0">
+      <p class="ew ew-wh">What We Offer</p>
+      <h2 class="h2 h2-wh">Care Tailored to Every <i style="color:var(--mint)">Individual</i></h2>
+      <p class="lead lead-wh" style="margin:0 auto">Each resident receives a plan built around their exact needs, rhythms, and preferences. Care that fits — not care that's convenient.</p>
+    </div>
+    <div class="svc-grid rv">
+      <div class="svc"><div class="svc-num">01</div><div class="svc-icon">🩷</div><div class="svc-body"><h3>Assisted Daily Living</h3><p>Dignified help with bathing, dressing, grooming, and mobility — preserving independence while ensuring safety every day.</p></div></div>
+      <div class="svc"><div class="svc-num">02</div><div class="svc-icon">🧠</div><div class="svc-body"><h3>Memory Care</h3><p>Structured, gentle routines for those with Alzheimer's or dementia. Familiar surroundings reduce confusion and promote genuine calm.</p></div></div>
+      <div class="svc"><div class="svc-num">03</div><div class="svc-icon">💊</div><div class="svc-body"><h3>Medication Management</h3><p>Licensed staff handle scheduling, administration, and physician coordination — no missed doses, no family worry.</p></div></div>
+      <div class="svc"><div class="svc-num">04</div><div class="svc-icon">🍲</div><div class="svc-body"><h3>Home-Cooked Meals</h3><p>Three freshly prepared meals and daily snacks. Dietary needs and personal favorites always honored — eating is a pleasure, not a chore.</p></div></div>
+      <div class="svc"><div class="svc-num">05</div><div class="svc-icon">🎨</div><div class="svc-body"><h3>Activities & Enrichment</h3><p>Art, music, gentle movement, gardening, holiday events, and outings — every day is purposeful and joyful.</p></div></div>
+      <div class="svc"><div class="svc-num">06</div><div class="svc-icon">🕊️</div><div class="svc-body"><h3>Respite & Hospice</h3><p>Short-term respite care gives family caregivers a real break. Hospice partnerships ensure comfort and dignity at every stage.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gal-bg" id="gallery">
+  <div class="wrap">
+    <div class="rv">
+      <p class="ew">Life at Peace Park</p>
+      <h2 class="h2">Moments That Make a <i>Home</i></h2>
+      <p class="lead">Daily care, creative activities, birthday parties, garden mornings — real glimpses of life here.</p>
+    </div>
+    <div class="gallery-wrap rv" style="margin-top:40px">
+      <div class="gtabs">
+        <button class="gtab active" onclick="filterG('all',this)">All Moments</button>
+        <button class="gtab" onclick="filterG('care',this)">Daily Care</button>
+        <button class="gtab" onclick="filterG('activity',this)">Activities</button>
+        <button class="gtab" onclick="filterG('event',this)">Celebrations</button>
+        <button class="gtab" onclick="filterG('outdoor',this)">Outdoors</button>
+      </div>
+      <div class="gal-grid" id="gg">
+        <div class="gi" data-cat="care" data-title="Compassionate Daily Care" data-sub="Our caregivers with residents" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1576765608866-5b51046452be?w=900&q=80" alt="Caregiver holding hands with senior resident" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Compassionate Daily Care</div><div class="gl-sub">Our caregivers with residents</div></div>
+        </div>
+        <div class="gi" data-cat="activity" data-title="Art & Creativity Sessions" data-sub="Weekly creative activities" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80" alt="Seniors doing art together" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Art & Creativity</div><div class="gl-sub">Weekly creative activities</div></div>
+        </div>
+        <div class="gi" data-cat="event" data-title="Birthday Celebrations" data-sub="Every birthday is a party here" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&q=80" alt="Birthday celebration" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Birthday Celebrations</div><div class="gl-sub">Every birthday is special here</div></div>
+        </div>
+        <div class="gi" data-cat="care" data-title="Health & Wellness Checks" data-sub="Licensed daily monitoring" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1559839914-17aae19cec71?w=700&q=80" alt="Nurse checking on resident" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Health Monitoring</div><div class="gl-sub">Licensed daily checks</div></div>
+        </div>
+        <div class="gi" data-cat="activity" data-title="Music & Social Afternoons" data-sub="Live music and group gatherings" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Social afternoon gathering" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Music & Social Time</div><div class="gl-sub">Group gatherings & live music</div></div>
+        </div>
+        <div class="gi" data-cat="outdoor" data-title="Garden Mornings" data-sub="Daily outdoor time in our garden" onclick="lb(this)">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Garden morning walk" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Garden Mornings</div><div class="gl-sub">Daily outdoor time & fresh air</div></div>
+        </div>
+        <div class="gi" data-cat="event" data-title="Holiday Festivities" data-sub="Decorating, feasts & family visits" onclick="lb(this)" style="display:none">
+          <img src="https://images.unsplash.com/photo-1543637005-4d639a4e16de?w=700&q=80" alt="Holiday celebration" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Holiday Festivities</div><div class="gl-sub">Feasts, decorating & family</div></div>
+        </div>
+        <div class="gi" data-cat="outdoor" data-title="Morning Walks" data-sub="Guided walks around the neighborhood" onclick="lb(this)" style="display:none">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=700&q=80" alt="Senior outdoor walk" loading="lazy"/>
+          <div class="gl"><div class="gl-title">Morning Walks</div><div class="gl-sub">Neighborhood strolls daily</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lbox" onclick="closeLb()">
+  <div class="lb-box" onclick="event.stopPropagation()">
+    <button class="lb-x" onclick="closeLb()">✕</button>
+    <img id="lbimg" src="" alt=""/>
+    <div class="lb-cap" id="lbcap"></div>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section class="sec" id="amenities">
+  <div class="wrap">
+    <div class="rv">
+      <p class="ew">Part of the Peace Park Family</p>
+      <h2 class="h2">One Family, <i>Three</i> More Homes Across Washington</h2>
+      <p class="lead">Same warmth, same standard of care — three sister homes across Washington, each licensed, family-run, and built around the same promise.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card rv">
+        <div class="loc-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Peace Park Adult Family Home in Puyallup"/></div>
+        <div class="loc-body">
+          <h3>Peace Park — Puyallup</h3>
+          <p class="loc-addr">📍 Puyallup, WA 98372</p>
+          <a class="loc-phone" href="tel:+12065550193">📞 (206) 555-0193</a>
+        </div>
+      </div>
+      <div class="loc-card rv">
+        <div class="loc-img"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80" alt="Peace Park Adult Family Home in Sumner"/></div>
+        <div class="loc-body">
+          <h3>Peace Park — Sumner</h3>
+          <p class="loc-addr">📍 Sumner, WA 98390</p>
+          <a class="loc-phone" href="tel:+12065550194">📞 (206) 555-0194</a>
+        </div>
+      </div>
+      <div class="loc-card rv">
+        <div class="loc-img"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=700&q=80" alt="Peace Park Adult Family Home in Auburn"/></div>
+        <div class="loc-body">
+          <h3>Peace Park — Auburn</h3>
+          <p class="loc-addr">📍 Auburn, WA 98092</p>
+          <a class="loc-phone" href="tel:+12065550195">📞 (206) 555-0195</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="testimonials" style="background:var(--blush)">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:560px;margin:0 auto">
+      <p class="ew">Family Voices</p>
+      <h2 class="h2">What Our Families <i>Say</i></h2>
+    </div>
+    <div class="testi-split rv">
+      <div class="testi-img">
+        <img src="https://images.unsplash.com/photo-1576765608866-5b51046452be?w=900&q=80" alt="Resident and family member sharing a warm moment at Peace Park" loading="lazy"/>
+        <div class="testi-img-cap"><strong>Real families.</strong><span>Real stories from Peace Park</span></div>
+      </div>
+      <div class="testi-panel">
+        <div class="testi-slider">
+          <div class="tc active">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Moving my mother felt impossible — until we found Peace Park. She is happier, calmer, and better cared for than anywhere we visited. We finally stopped worrying."</blockquote>
+            <div class="tc-author"><div class="tc-av">👩</div><div><div class="tc-name">Sandra L.</div><div class="tc-role">Daughter of resident, 2+ years</div></div></div>
+          </div>
+          <div class="tc">
+            <div class="stars">★★★★★</div>
+            <blockquote>"The staff knows my dad by name, knows his stories, and treats him like actual family. The meals, garden walks, activities — he is truly living, not just being cared for."</blockquote>
+            <div class="tc-author"><div class="tc-av">👨</div><div><div class="tc-name">Marcus T.</div><div class="tc-role">Son of resident, 18 months</div></div></div>
+          </div>
+          <div class="tc">
+            <div class="stars">★★★★★</div>
+            <blockquote>"We tried other homes. Nothing compares. The personal attention, proactive communication, and genuine warmth — Peace Park is something truly rare and special."</blockquote>
+            <div class="tc-author"><div class="tc-av">👫</div><div><div class="tc-name">Patricia & George R.</div><div class="tc-role">Family of resident</div></div></div>
+          </div>
+          <div class="tc">
+            <div class="stars">★★★★★</div>
+            <blockquote>"My grandmother has dementia and we were terrified. The memory care team gave her structure, safety — and most importantly, real joy every single day. We are so grateful."</blockquote>
+            <div class="tc-author"><div class="tc-av">👧</div><div><div class="tc-name">Jenna K.</div><div class="tc-role">Granddaughter of resident</div></div></div>
+          </div>
+        </div>
+        <div class="testi-nav">
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-arrow" onclick="testiMove(-1)" aria-label="Previous testimonial">←</button>
+          <button class="testi-arrow" onclick="testiMove(1)" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STAFF -->
+<section class="sec" id="staff" style="background:var(--white)">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:560px;margin:0 auto">
+      <p class="ew">The People Behind the Care</p>
+      <h2 class="h2">Meet Our <i>Caregiving Team</i></h2>
+      <p class="lead" style="margin:0 auto">Every person who walks through our door is greeted by someone who genuinely cares. Here are the dedicated individuals who make Peace Park feel like home.</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card rv">
+        <img class="staff-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Maria Santos, Home Director"/>
+        <div class="staff-body">
+          <div class="staff-name">Maria Santos</div>
+          <div class="staff-role">Home Director & Owner</div>
+          <p class="staff-bio">With over 15 years in senior care, Maria founded Peace Park on a simple belief: every elder deserves dignity, warmth, and a true sense of home. She is on-site daily and personally oversees every resident's care plan.</p>
+          <span class="staff-badge">🎓 Certified AFH Administrator</span>
+        </div>
+      </div>
+      <div class="staff-card rv">
+        <img class="staff-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="James Reyes, Lead Caregiver"/>
+        <div class="staff-body">
+          <div class="staff-name">James Reyes</div>
+          <div class="staff-role">Lead Caregiver</div>
+          <p class="staff-bio">James brings 8 years of hands-on caregiving experience and a natural warmth that residents respond to immediately. He specializes in memory care and is known for his patience, humor, and genuine compassion.</p>
+          <span class="staff-badge">🧠 Memory Care Specialist</span>
+        </div>
+      </div>
+      <div class="staff-card rv">
+        <img class="staff-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Linda Park, Care Coordinator"/>
+        <div class="staff-body">
+          <div class="staff-name">Linda Park, RN</div>
+          <div class="staff-role">Care Coordinator & Nurse</div>
+          <p class="staff-bio">Linda oversees all medical coordination, medication management, and physician communications. Families love her proactive updates and her ability to explain complex care needs in simple, reassuring terms.</p>
+          <span class="staff-badge">💊 Registered Nurse · 12 Yrs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="sec compare-bg" id="compare">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:600px;margin:0 auto">
+      <p class="ew ew-wh">Making the Right Choice</p>
+      <h2 class="h2 h2-wh">Is an Adult Family Home <i style="color:var(--mint)">Right for You?</i></h2>
+      <p class="lead lead-wh" style="margin:0 auto">Not all care options are equal. Here's an honest look at how an AFH like Peace Park compares to larger facilities.</p>
+    </div>
+    <div class="compare-table rv">
+      <div class="compare-row header">
+        <div class="compare-cell"></div>
+        <div class="compare-cell col-head highlight">Peace Park AFH</div>
+        <div class="compare-cell col-head">Assisted Living</div>
+        <div class="compare-cell col-head hide-mob">Nursing Home</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Number of residents</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Up to 6</div>
+        <div class="compare-cell center">50–200+</div>
+        <div class="compare-cell center hide-mob">100–300+</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Caregiver-to-resident ratio</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> 1:3 or better</div>
+        <div class="compare-cell center">1:8–15</div>
+        <div class="compare-cell center hide-mob">1:10–20</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Personalized care plans</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Always</div>
+        <div class="compare-cell center">Sometimes</div>
+        <div class="compare-cell center hide-mob">Rarely</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Home-cooked meals</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Daily</div>
+        <div class="compare-cell center"><span class="cross">✗</span></div>
+        <div class="compare-cell center hide-mob"><span class="cross">✗</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Family visit anytime</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Open door</div>
+        <div class="compare-cell center">Limited hours</div>
+        <div class="compare-cell center hide-mob">Restricted</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">Memory care available</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Yes</div>
+        <div class="compare-cell center">Varies</div>
+        <div class="compare-cell center hide-mob"><span class="check">✔</span> Yes</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">24/7 staffing</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Yes</div>
+        <div class="compare-cell center">Varies</div>
+        <div class="compare-cell center hide-mob"><span class="check">✔</span> Yes</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">True home environment</div>
+        <div class="compare-cell center highlight-col"><span class="check">✔</span> Yes</div>
+        <div class="compare-cell center"><span class="cross">✗</span></div>
+        <div class="compare-cell center hide-mob"><span class="cross">✗</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-bg" id="faq">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:560px;margin:0 auto">
+      <p class="ew">Common Questions</p>
+      <h2 class="h2">Answers to What <i>Families Ask Most</i></h2>
+      <p class="lead" style="margin:0 auto">We believe in total transparency. Here are the questions we hear most often — answered honestly.</p>
+    </div>
+    <div class="faq-grid rv">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How much does Peace Park cost?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Monthly rates vary based on the level of care your loved one needs. We offer a transparent pricing structure with no hidden fees. Most families find our rates comparable to assisted living, but with far more personalized attention. Contact us for a detailed quote tailored to your situation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Does Peace Park accept Medicaid or Medicare?<span class="faq-icon">+</span></div>
+        <div class="faq-a">We accept private pay and work with families to explore all available funding options including long-term care insurance. Medicaid eligibility through Washington State's ALTSA program may apply — we're happy to guide you through the process and connect you with the right resources.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What's included in the monthly rate?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Your monthly rate includes room and board, three home-cooked meals and snacks daily, all personal care assistance, medication management, laundry, housekeeping, scheduled activities, and 24/7 caregiver support. There are no surprise add-ons for standard care services.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I know if my loved one is ready for an AFH?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Signs that it may be time include increasing difficulty with daily activities, safety concerns at home, loneliness or isolation, memory-related challenges, or caregiver burnout in the family. We offer free consultations to help you assess where your loved one is and what level of care makes the most sense.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can family visit anytime?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Absolutely. Peace Park operates an open-door policy — family members are welcome to visit anytime without prior notice. We encourage regular involvement. Many families join us for meals, activities, and holiday celebrations. Staying connected is part of what makes our home feel like a real home.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens if my loved one's needs increase?<span class="faq-icon">+</span></div>
+        <div class="faq-a">We regularly review and update each resident's care plan as their needs evolve. Our licensed staff are trained to handle a wide range of care levels, including advanced memory care and hospice support. We partner with local healthcare providers to ensure continuity and always communicate proactively with families.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I start the admission process?<span class="faq-icon">+</span></div>
+        <div class="faq-a">It starts with a simple conversation. Call us or fill out the contact form and we'll schedule a free, no-pressure tour. We'll walk you through the home, answer every question, and if it feels like the right fit, we'll guide you through the assessment and move-in process step by step.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is Peace Park state licensed and inspected?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Peace Park is fully licensed by Washington State DSHS and inspected regularly by the Residential Care Services (RCS) division — at minimum every 15 months. Our inspection records are clean and we maintain full compliance with all state regulations. License #WA-AFH-XXXXX.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-sec">
+  <h2>Your loved one deserves a <i>peaceful</i> place to call home.</h2>
+  <p>Tours are free, relaxed, and completely pressure-free. Come see for yourself why families trust Peace Park with the people they love most.</p>
+  <div class="cta-btns">
+    <a href="tel:+12065550192" class="btn-gold-lg">📞 Call (206) 555-0192</a>
+    <a href="#contact" class="btn-wh-lg">📅 Request a Tour Online</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact-bg" id="contact">
+  <div class="wrap">
+    <div class="rv">
+      <p class="ew">Get in Touch</p>
+      <h2 class="h2">We'd Love to <i>Hear From You</i></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rv-l">
+        <p class="ci-head">Whether you have questions, want to tour, or simply need someone to talk to — we're here. No obligation. Just a warm, honest conversation.</p>
+        <div class="cd"><div class="cd-ic">📞</div><div class="cd-t"><strong>Phone</strong><a href="tel:+12065550192">(206) 555-0192</a></div></div>
+        <div class="cd"><div class="cd-ic">✉️</div><div class="cd-t"><strong>Email</strong><a href="mailto:info@peaceparkafh.com">info@peaceparkafh.com</a></div></div>
+        <div class="cd"><div class="cd-ic">📍</div><div class="cd-t"><strong>Location</strong><a href="https://maps.google.com" target="_blank" rel="noopener">Bonney Lake, WA 98391</a></div></div>
+        <div class="cd"><div class="cd-ic">🕐</div><div class="cd-t"><strong>Office Hours</strong><span>Monday – Saturday, 8 AM – 6 PM</span></div></div>
+      </div>
+      <div class="rv-r">
+        <div class="form-card">
+          <div id="fsok" style="display:none;padding:24px;background:var(--mint-pale);border-radius:14px;border:1.5px solid var(--mint)">
+            <p style="font-size:1.05rem;font-weight:700;color:var(--forest);margin-bottom:10px">✅ Form sent successfully!</p>
+            <p style="font-size:.9rem;color:var(--body);line-height:1.75;margin-bottom:14px">The Peace Park team will be in touch with you soon.</p>
+            <p style="font-size:.85rem;color:var(--sub);line-height:1.75">If you have any questions in the meantime, feel free to email us at <a href="mailto:diwaspandey524@gmail.com" style="color:var(--forest);font-weight:600">diwaspandey524@gmail.com</a> or call us directly at <a href="tel:+15648883396" style="color:var(--forest);font-weight:600">(564) 888-3396</a>.</p>
+          </div>
+          <div id="fserr" style="display:none;color:red;font-size:.85rem;margin-bottom:12px;padding:12px;background:#fff0f0;border-radius:8px">Something went wrong. Please try again or call us at (564) 888-3396.</div>
+          <form id="cf">
+            <div class="form-row">
+              <div>
+                <label for="fn">First Name</label>
+                <input type="text" id="fn" name="first_name" placeholder="Margaret" required/>
+                <div class="field-err" id="err-fn">⚠ Please fill in your first name.</div>
+              </div>
+              <div>
+                <label for="ln">Last Name</label>
+                <input type="text" id="ln" name="last_name" placeholder="Johnson" required/>
+                <div class="field-err" id="err-ln">⚠ Please fill in your last name.</div>
+              </div>
+            </div>
+            <label for="ph">Phone Number</label>
+            <input type="tel" id="ph" name="phone" placeholder="(206) 555-0000" required/>
+            <div class="field-err" id="err-ph">⚠ Please fill in your phone number.</div>
+            <label for="em">Email Address</label>
+            <input type="email" id="em" name="email" placeholder="you@example.com" required/>
+            <div class="field-err" id="err-em">⚠ Please fill in a valid email address.</div>
+            <label for="svc">I'm Interested In</label>
+            <select id="svc" name="service" required>
+              <option value="">Select a service…</option>
+              <option>Assisted Daily Living</option>
+              <option>Memory Care</option>
+              <option>Medication Management</option>
+              <option>Respite Care</option>
+              <option>Hospice Support</option>
+              <option>Just Exploring Options</option>
+            </select>
+            <div class="field-err" id="err-svc">⚠ Please select a service you're interested in.</div>
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Tell us a little about your loved one and what kind of care they may need…" required></textarea>
+            <div class="field-err" id="err-msg">⚠ Please fill in your message.</div>
+            <button type="submit" id="cfbtn">Send Message & Request a Tour →</button>
+          </form>
+          <script>
+            const fields = [
+              {id:'fn', err:'err-fn'},
+              {id:'ln', err:'err-ln'},
+              {id:'ph', err:'err-ph'},
+              {id:'em', err:'err-em'},
+              {id:'svc', err:'err-svc'},
+              {id:'msg', err:'err-msg'}
+            ];
+
+            // Clear error on input
+            fields.forEach(({id, err}) => {
+              document.getElementById(id).addEventListener('input', function(){
+                this.classList.remove('invalid');
+                document.getElementById(err).classList.remove('show');
+              });
+            });
+
+            document.getElementById('cf').addEventListener('submit', async function(e) {
+              e.preventDefault();
+
+              // Validate all fields
+              let valid = true;
+              fields.forEach(({id, err}) => {
+                const el = document.getElementById(id);
+                if (!el.value.trim()) {
+                  el.classList.add('invalid');
+                  document.getElementById(err).classList.add('show');
+                  valid = false;
+                } else {
+                  el.classList.remove('invalid');
+                  document.getElementById(err).classList.remove('show');
+                }
+              });
+              if (!valid) return;
+
+              const btn = document.getElementById('cfbtn');
+              btn.textContent = 'Sending…';
+              btn.disabled = true;
+              try {
+                const res = await fetch('https://formspree.io/f/mjgdqdyn', {
+                  method: 'POST',
+                  body: new FormData(this),
+                  headers: { Accept: 'application/json' }
+                });
+                if (res.ok) {
+                  document.getElementById('cf').style.display = 'none';
+                  document.getElementById('fserr').style.display = 'none';
+                  document.getElementById('fsok').style.display = 'block';
+                } else {
+                  document.getElementById('fserr').style.display = 'block';
+                  btn.textContent = 'Send Message & Request a Tour →';
+                  btn.disabled = false;
+                }
+              } catch(err) {
+                document.getElementById('fserr').style.display = 'block';
+                btn.textContent = 'Send Message & Request a Tour →';
+                btn.disabled = false;
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo">🕊️ Peace Park AFH</div>
+        <p>A Washington State-licensed adult family home in Bonney Lake, WA — dedicated to warm, personalized care in a true home environment since 2014.</p>
+        <div class="lic">License #: WA-AFH-XXXXX &nbsp;|&nbsp; DSHS Certified</div>
+      </div>
+      <div class="ft-col">
+        <h4>Navigation</h4>
+        <a href="#about">About Us</a>
+        <a href="#services">Care Services</a>
+        <a href="#gallery">Photo Gallery</a>
+        <a href="#testimonials">Family Stories</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="tel:+12065550192">(206) 555-0192</a>
+        <a href="mailto:info@peaceparkafh.com">info@peaceparkafh.com</a>
+        <a href="#">Bonney Lake, WA 98391</a>
+        <a href="#">Get Directions →</a>
+      </div>
+    </div>
+    <div class="ft-bar">
+      <span>© 2025 Peace Park Adult Family Home. All rights reserved.</span>
+      <span class="ft-motto">"Every resident is family."</span>
+      <div style="display:flex;gap:20px"><a href="#">Privacy Policy</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ toggle
+function toggleFaq(el){
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Mobile drawer
+const ham=document.getElementById('ham'),ov=document.getElementById('ov'),dr=document.getElementById('drawer');
+ham.addEventListener('click',()=>{ov.classList.add('open');dr.classList.add('open');document.body.style.overflow='hidden'});
+function closeMob(){ov.classList.remove('open');dr.classList.remove('open');document.body.style.overflow=''}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();const top=t.getBoundingClientRect().top+window.scrollY-80;window.scrollTo({top,behavior:'smooth'})}
+  });
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>obs.observe(el));
+
+// Gallery filter — show/hide, no layout changes
+const allItems=[...document.querySelectorAll('.gi')];
+function filterG(cat,btn){
+  document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  allItems.forEach(i=>{
+    const show=cat==='all'||i.dataset.cat===cat;
+    i.style.display=show?'':'none';
+  });
+}
+
+// Lightbox
+function lb(el){
+  document.getElementById('lbimg').src=el.querySelector('img').src;
+  document.getElementById('lbimg').alt=el.querySelector('img').alt;
+  document.getElementById('lbcap').textContent=el.dataset.title+(el.dataset.sub?' — '+el.dataset.sub:'');
+  document.getElementById('lbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){document.getElementById('lbox').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+// Testimonial slider
+const testiCards=[...document.querySelectorAll('.testi-slider .tc')];
+const testiDotsEl=document.getElementById('testiDots');
+let testiIdx=0,testiTimer;
+testiCards.forEach((_,i)=>{
+  const d=document.createElement('button');
+  d.className='testi-dot'+(i===0?' active':'');
+  d.setAttribute('aria-label','Go to testimonial '+(i+1));
+  d.onclick=()=>{testiGo(i);resetTesti()};
+  testiDotsEl.appendChild(d);
+});
+function testiGo(i){
+  testiCards[testiIdx].classList.remove('active');
+  testiDotsEl.children[testiIdx].classList.remove('active');
+  testiIdx=(i+testiCards.length)%testiCards.length;
+  testiCards[testiIdx].classList.add('active');
+  testiDotsEl.children[testiIdx].classList.add('active');
+}
+function testiMove(d){testiGo(testiIdx+d);resetTesti()}
+function resetTesti(){clearInterval(testiTimer);testiTimer=setInterval(()=>testiGo(testiIdx+1),6000)}
+resetTesti();
+
+</script>
+</body>
+</html>
